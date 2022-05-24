@@ -4,32 +4,36 @@ package analyse;
 
 /*
 ArrayList源码分析
+http://t.csdn.cn/866SJ
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayListAnalyse extends ArrayList{
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         // 例子 1
 
         // 如果有时候我们只需要一个固定的值，可以去使用默认参数的情况
         // 初始就进行了精确的扩容，可以优化程序，不要滥用 0
-        List<String> list = new ArrayList<>(0);
-        // 添加了10个元素
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
-        list.add("a");
+
+//        List<String> list = new ArrayList<>(0);
+//        // 添加了10个元素
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+//        list.add("a");
+
         // list 会执行几次扩容？
         // 7
 //        0 1
@@ -79,6 +83,24 @@ public class ArrayListAnalyse extends ArrayList{
 //        ArrayList list8 = new ArrayList();
 //        list8.add(new Object());
 //        list8.add(new Object());
+
+        // 例子 8
+//        List<String>  list9 = new ArrayList();
+//        list9.add("1");
+//        list9.add("3");
+//        list9.add("2");
+//        List<String>  list10 = new ArrayList();
+//        list10.add("1");
+//        list10.add("2");
+//        System.out.println(list9.retainAll(list10));
+//        System.out.println(Arrays.toString(list9.toArray()));
+//        System.out.println(Arrays.toString(list10.toArray()));
+        /**
+         * true
+         * [1, 2]
+         * [1, 2]
+         */
+
 
         /*
         发送list给server端（过网络）
